@@ -70,6 +70,14 @@
     <script type="text/javascript">
       $(document).ready(function() {
 
+        // Replace page background
+        const new_bg = $('.page-background');
+        if (new_bg.length) {
+          const img = $(new_bg).attr('src');
+          $('.page-header-background > img').attr('src', img);
+          $(new_bg).hide();
+        }
+
         $(".step-info-wrap").click(function() {
           if ($(this).parent().hasClass('active')) {
             $(this).parent().removeClass('active');
