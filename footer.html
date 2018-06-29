@@ -98,6 +98,15 @@
           $(this).addClass('active');
         });
 
+        $('div[class*="__contactDetails"]').click(function() {
+          let checkbox = $(this).find('input[type="checkbox"]');
+          if (checkbox.prop('checked')) {
+            checkbox.prop('checked', false);
+          } else {
+            checkbox.prop('checked', true);
+          }
+        });
+
         $(document).on('click', [
           '.navbar-dropdown-toggle',
           '.country-dropdown-toggle',
@@ -220,6 +229,9 @@
         $('.nav-search-wrap').removeClass('form-group');
 
         $('input[name="transaction.ccvv"]').addClass('ccvv');
+
+        $('input[type="checkbox"]').removeClass('form-control');
+        $('input[type="checkbox"]').parent().removeClass('form-group');
 
         $('.en__field__element--text').css("display", "block");
 

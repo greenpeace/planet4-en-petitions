@@ -5787,68 +5787,6 @@
         }
       }
 
-      .form-group .styled-checkbox {
-        position: absolute;
-        opacity: 0;
-      }
-
-      .form-group .styled-checkbox+label {
-        position: relative;
-        cursor: pointer;
-        padding: 0;
-      }
-
-      .form-group .styled-checkbox+label:before {
-        content: "";
-        margin-right: 10px;
-        display: inline-block;
-        vertical-align: text-top;
-        width: 20px;
-        height: 20px;
-        background: #fff;
-      }
-
-      .form-group .styled-checkbox:hover+label:before {
-        background: #02484e;
-      }
-
-      .form-group .styled-checkbox:focus+label:before {
-        -webkit-box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);
-        box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);
-      }
-
-      .form-group .styled-checkbox:checked+label:before {
-        background: #02484e;
-      }
-
-      .form-group .styled-checkbox:disabled+label {
-        color: #b8b8b8;
-        cursor: auto;
-      }
-
-      .form-group .styled-checkbox:disabled+label:before {
-        -webkit-box-shadow: none;
-        box-shadow: none;
-        background: #ddd;
-      }
-
-      .form-group .styled-checkbox:checked+label:after {
-        content: "";
-        position: absolute;
-        left: 5px;
-        top: 9px;
-        background: white;
-        width: 2px;
-        height: 2px;
-        -webkit-box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white,
-        4px -4px 0 white, 4px -6px 0 white, 4px -8px 0 white;
-        box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white,
-        4px -6px 0 white, 4px -8px 0 white;
-        -webkit-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-        transform: rotate(45deg);
-      }
-
       textarea {
           padding: 16px !important;
       }
@@ -5891,16 +5829,18 @@
         }
       }
 
-      .en__field__element--checkbox {
+      div[class*=__field__element--checkbox],
+      div[class$="__contactDetails"] {
         margin: 20px 0;
       }
 
-      .en__field__input--checkbox {
+      input[type="checkbox"] {
         position: absolute;
         opacity: 0;
       }
 
-      .en__field__input--checkbox+.en__field__label {
+      input[type="checkbox"] + label,
+      input[type="checkbox"] + div[class*="__contactDetails__rows"] {
         position: relative;
         cursor: pointer;
         padding: 0;
@@ -5911,12 +5851,14 @@
       }
 
       @media (min-width: 992px) {
-        .en__field__input--checkbox+.en__field__label {
+        input[type="checkbox"] + label,
+        input[type="checkbox"] + div[class*="__contactDetails__rows"] {
           font-size: 1em;
         }
       }
 
-      .en__field__input--checkbox+.en__field__label:before {
+      input[type="checkbox"] + label:before,
+      input[type="checkbox"] + div[class*="__contactDetails__rows"]:before {
         content: "";
         margin-right: 20px;
         margin-left: -42px;
@@ -5928,11 +5870,13 @@
         border: 3px solid #0a3351;
       }
 
-      .en__field__input--checkbox:checked+.en__field__label:before {
+      input[type="checkbox"]:checked + label:before,
+      input[type="checkbox"]:checked + div[class*="__contactDetails__rows"]:before {
         background: #0a3351;
       }
 
-      .en__field__input--checkbox:checked+.en__field__label:after {
+      input[type="checkbox"]:checked + label:after,
+      input[type="checkbox"]:checked + div[class*="__contactDetails__rows"]:after {
         content: "";
         position: absolute;
         left: -5px;
@@ -5944,6 +5888,15 @@
         4px -6px 0 white, 4px -8px 0 white;
         transform: rotate(45deg);
         margin-left: -32px;
+      }
+
+      div[class*="__contactDetails__row"]:first-child {
+        display: inline-block;
+        margin-top: -5px;
+      }
+
+      div[class*="__contactDetails__row"]:not(:first-child) {
+        margin-left: 5px;
       }
 
       .message-box {
@@ -7557,7 +7510,7 @@
       div[class*="component--column--2"] {
         width: 100%;
         position: relative;
-        padding: 0 16px;
+        padding: 16px;
       }
 
       @media (min-width: 768px) {
@@ -7649,10 +7602,21 @@
 
       div[class*="--contactblock"] {
         background-color: transparent;
+        padding: 0;
       }
 
       div[class*="__singleMessage"] {
         background-color: transparent;
+        padding: 0;
+      }
+
+      div[class*="__contact__detail"] {
+        padding: 0;
+        background-color: transparent;
+      }
+
+      div[class*="__contactDetails"] {
+        align-items: baseline;
       }
 
       .sticky {
