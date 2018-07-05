@@ -6,22 +6,22 @@
       <div class="container">
         <ul class="footer-social-media list-unstyled col-md-8 col-lg-5">
           <li>
-            <a href="javascript:void(0);" id="fb_page">
+            <a href="https://www.facebook.com/greenpeace.international">
               <i class="fa fa-facebook"></i>
             </a>
           </li>
           <li>
-            <a href="javascript:void(0);" id="tw_page">
+            <a href="https://www.twitter.com/greenpeace">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
           <li>
-            <a href="javascript:void(0);" id="yt_page">
+            <a href="https://www.youtube.com/greenpeace">
               <i class="fa fa-youtube-play"></i>
             </a>
           </li>
           <li>
-            <a href="javascript:void(0);" id="insta_page">
+            <a href="https://www.instagram.com/greenpeace/">
               <i class="fa fa-instagram"></i>
             </a>
           </li>
@@ -29,28 +29,28 @@
 
         <ul class="list-unstyled footer-links">
           <li>
-            <a href="javascript:void(0);" id="news_page">News</a>
+            <a href="https://www.greenpeace.org/international/?s=+&orderby=relevant&f%5Bctype%5D%5BPost%5D=3">News</a>
           </li>
           <li>
-            <a href="javascript:void(0);" id="about_page">About</a>
+            <a href="https://www.greenpeace.org/international/explore/about/">About</a>
           </li>
           <li>
-            <a href="javascript:void(0);" id="jobs_page">Jobs</a>
+            <a href="https://www.linkedin.com/jobs/greenpeace-jobs/">Jobs</a>
           </li>
           <li>
-            <a href="javascript:void(0);" id="press_page">Press Centre</a>
+            <a href="https://www.greenpeace.org/international/press-centre/">Press Centre</a>
           </li>
         </ul>
 
         <ul class="list-unstyled footer-links-secondary">
           <li>
-            <a href="javascript:void(0);" id="privacy_page">Privacy</a>
+            <a href="https://www.greenpeace.org/international/privacy/">Privacy</a>
           </li>
           <li>
-            <a href="javascript:void(0);" id="community_policy_page">COMMUNITY POLICY</a>
+            <a href="https://www.greenpeace.org/international/community-policy/">COMMUNITY POLICY</a>
           </li>
           <li>
-            <a href="javascript:void(0);" id="search_archive_page">SEARCH THE ARCHIVE</a>
+            <a href="http://www.greenpeace.org/international/en/System-templates/Search-results/?adv=true&_ga=2.259297730.937523877.1515410303-280997801.1515410303">SEARCH THE ARCHIVE</a>
           </li>
         </ul>
 
@@ -66,259 +66,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="https://greenpeace.github.io/planet4-en-petitions/main.js"></script>
 
-    <script type="text/javascript">
-      $(document).ready(function() {
+    <script>
 
-        // Replace page background
-        const new_bg = $('.page-background');
-        if (new_bg.length) {
-          const img = $(new_bg).attr('src');
-          $('.page-header-background > img').attr('src', img);
-          $(new_bg).hide();
-        }
-
-        $(".step-info-wrap").click(function() {
-          if ($(this).parent().hasClass('active')) {
-            $(this).parent().removeClass('active');
-          }
-          else {
-            $('.col').removeClass('active');
-            $(this).parent().addClass('active');
-          }
-        });
-
-        $('.country-select-dropdown').click(function() {
-          $(this).parent().toggleClass('active-li');
-          $('.country-select-box').toggle();
-        });
-
-        $('.country-select-box .country-list li').click(function() {
-          $(this).parents('.country-select-box').find('li').removeClass('active');
-          $(this).addClass('active');
-        });
-
-        $('div[class*="__contactDetails"]').click(function() {
-          let checkbox = $(this).find('input[type="checkbox"]');
-          if (checkbox.prop('checked')) {
-            checkbox.prop('checked', false);
-          } else {
-            checkbox.prop('checked', true);
-          }
-        });
-
-        $(document).on('click', [
-          '.navbar-dropdown-toggle',
-          '.country-dropdown-toggle',
-          '.navbar-search-toggle',
-        ].join(), function toggleNavDropdown(evt) {
-          evt.preventDefault();
-          evt.stopPropagation();
-
-          var $button = $(this);
-          var target = $button.data('target');
-          if (!target) {
-            throw new Error('Missing `data-target` attribute: specify the container to be toggled');
-          }
-          var toggleClass = $button.data('toggle');
-          if (!toggleClass) {
-            throw new Error('Missing `data-toggle` attribute: specify the class to toggle');
-          }
-
-          // Toggle visibility of the target specified via data-target.
-          $(target).toggleClass(toggleClass);
-          // Toggle aria-expanded attribute.
-          $button.attr('aria-expanded', function (i, attr) {
-            return attr === 'false' ? 'true' : 'false';
-          });
-        });
-
-        $(document).on('click', function closeInactiveMenus(evt) {
-          var clickedElement = evt.target;
-          $('.btn-navbar-toggle[aria-expanded="true"]').each(function (i, button) {
-            var $button = $(button);
-            var buttonTarget = $($button.data('target')).get(0);
-            if (buttonTarget && !$.contains(buttonTarget, clickedElement)) {
-              // Spoof a click on the open menu's toggle to close that menu.
-              $button.trigger('click');
-            }
-          });
-        });
-
-        $(document).on('click', '.close-navbar-dropdown', function(evt) {
-          evt.preventDefault();
-          // Proxy to the main navbar close button
-          $('.navbar-dropdown-toggle').trigger('click');
-        });
-
-
-        if ($(window).width() <= 768) {
-          var didScroll;
-          var lastScrollTop = 0;
-          var delta = 5;
-          var navbarHeight = $('.top-navigation').outerHeight();
-
-          $(window).scroll(function (event) {
-            didScroll = true;
-          });
-
-          setInterval(function () {
-            if (didScroll) {
-              hasScrolled();
-              didScroll = false;
-            }
-          }, 250);
-
-          function hasScrolled() {
-            var st = $(this).scrollTop();
-            if (Math.abs(lastScrollTop - st) <= delta)
-              return;
-            if (st > lastScrollTop && st > navbarHeight) {
-              $('.top-navigation').removeClass('nav-down').addClass('nav-up');
-            } else {
-              if (st + $(window).height() < $(document).height()) {
-                $('.top-navigation').removeClass('nav-up').addClass('nav-down');
-              }
-            }
-            lastScrollTop = st;
-          }
-
-          var $slider = $('.mobile-menus');
-
-          $(document).click(function() {
-            if ($('.menu').hasClass('active')) {
-              //Hide the menus if visible
-              $slider.animate({
-                left: parseInt($slider.css('left'), 10) == 0 ?
-                  -320 : 0
-              });
-              $('.menu').removeClass('active');
-            }
-            if ($('.search-box').hasClass('active')) {
-              //Hide the search if visible
-              $searchBox.slideToggle().toggleClass('active');;
-            }
-          });
-
-          $('.menu').click(function() {
-            event.stopPropagation();
-            $(this).toggleClass('active');
-            $slider.animate({
-              left: parseInt($slider.css('left'), 10) == -320 ?
-                0 : -320
-            });
-          });
-
-          var $searchBox = $('#search .search-box');
-          var $searchTrigger = $('#search-trigger');
-
-          $searchTrigger.on('click', function (e) {
-            event.stopPropagation();
-            $searchBox.slideToggle().toggleClass('active');
-          });
-        };
-
-        $('.en__field__label').hide();
-        $('.en__field__input--radio').next().show();
-
-        $('input').addClass('form-control');
-        $('input').parent().addClass('form-group');
-        $('select').addClass('form-control');
-        $('select').parent().addClass('form-group');
-        $('input[type="radio"]').removeClass('form-control');
-        $('.nav-search-wrap').removeClass('form-group');
-
-        $('input[name="transaction.ccvv"]').addClass('ccvv');
-
-        $('input[type="checkbox"]').removeClass('form-control');
-        $('input[type="checkbox"]').parent().removeClass('form-group');
-
-        $('.en__field__element--text').css("display", "block");
-
-        $('.en__field').css("padding-bottom", "0px");
-
-        $('.en__field__input--checkbox').parent().find('label').css("display", "block");
-        $('.en__field__input--checkbox').parent().find('label').addClass("form-check-label");
-        $('.en__field__input--checkbox').parent().find('label').css("margin-top", "-25px");
-        $('.en__field__input--checkbox').parent().find('label').css("margin-left", "25px");
-
-        $('.en__submit').find('button').addClass('btn btn-primary btn-block');
-
-        $('.en__field--text').each(function () {
-          var input = $(this).find('input');
-          var label = $(this).find('label');
-          var labelText = label.text();
-          input.attr('placeholder', labelText);
-        });
-
-        var p4_site_url = "https://www.greenpeace.org/international/";
-        var p4_site_act_page = "https://www.greenpeace.org/international/act/";
-        var p4_site_explore_page = "https://www.greenpeace.org/international/explore/";
-        var p4_site_donate_btn = "https://secured.greenpeace.org/international/en/supportus/?_ga=2.256767427.937523877.1515410303-280997801.1515410303";
-
-        var p4_fb_page = "https://www.facebook.com/greenpeace.international";
-        var p4_twitter_page = "https://www.twitter.com/greenpeace";
-        var p4_yt_page = "https://www.youtube.com/greenpeace";
-        var p4_instagram_page = "https://www.instagram.com/greenpeace/";
-
-        var p4_site_news_page = "https://www.greenpeace.org/international/?s=+&orderby=relevant&f%5Bctype%5D%5BPost%5D=3";
-        var p4_site_about_page = "https://www.greenpeace.org/international/explore/about/";
-        var p4_site_jobs_page = "https://www.linkedin.com/jobs/greenpeace-jobs/";
-        var p4_site_press_page = "https://www.greenpeace.org/international/press-centre/";
-
-        var p4_site_privacy_page = "https://www.greenpeace.org/international/privacy/";
-        var p4_community_policy_page = "https://www.greenpeace.org/international/community-policy/";
-        var p4_search_archive_page = "http://www.greenpeace.org/international/en/System-templates/Search-results/?adv=true&_ga=2.259297730.937523877.1515410303-280997801.1515410303";
-
-        function search_form() {
-          var searchme = $("#searchme").val();
-          window.location = p4_site_url + "?orderby=relevant&s=" + searchme;
-          return false;
-        }
-
-        if (p4_site_act_page != '') {
-          $('a[id="act_page"]').attr('href', p4_site_act_page);
-        }
-        if (p4_site_explore_page != '') {
-          $('a[id="explore_page"]').attr('href', p4_site_explore_page);
-        }
-        if (p4_site_donate_btn != '') {
-          $('a[id="donate_page"]').attr('href', p4_site_donate_btn);
-        }
-        if (p4_fb_page != '') {
-          $('a[id="fb_page"]').attr('href', p4_fb_page);
-        }
-        if (p4_twitter_page != '') {
-          $('a[id="tw_page"]').attr('href', p4_twitter_page);
-        }
-        if (p4_yt_page != '') {
-          $('a[id="yt_page"]').attr('href', p4_yt_page);
-        }
-        if (p4_instagram_page != '') {
-          $('a[id="insta_page"]').attr('href', p4_instagram_page);
-        }
-        if (p4_site_news_page != '') {
-          $('a[id="news_page"]').attr('href', p4_site_news_page);
-        }
-        if (p4_site_about_page != '') {
-          $('a[id="about_page"]').attr('href', p4_site_about_page);
-        }
-        if (p4_site_jobs_page != '') {
-          $('a[id="jobs_page"]').attr('href', p4_site_jobs_page);
-        }
-        if (p4_site_press_page != '') {
-          $('a[id="press_page"]').attr('href', p4_site_press_page);
-        }
-        if (p4_site_privacy_page != '') {
-          $('a[id="privacy_page"]').attr('href', p4_site_privacy_page);
-        }
-        if (p4_community_policy_page != '') {
-          $('a[id="community_policy_page"]').attr('href', p4_community_policy_page);
-        }
-        if (p4_search_archive_page != '') {
-          $('a[id="search_archive_page"]').attr('href', p4_search_archive_page);
-        }
-      });
     </script>
 
   </body>
