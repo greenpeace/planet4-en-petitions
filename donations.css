@@ -2,7 +2,7 @@ div[class*="donations-formsection-"] {
   background: rgba(07, 67, 101, 0.8);
   color: white;
   padding: 15px;
-  margin-bottom: 20px;
+  display: none;
 }
 
 .formsection-heading {
@@ -12,12 +12,17 @@ div[class*="donations-formsection-"] {
   font-size: 1.2rem;
   background: rgba(07, 67, 101, 1);
   color: white;
+  display: none;
+}
+
+.formsection-heading:not(:first-child) {
+  margin-top: 20px;
 }
 
 
 .badge-light {
   border-radius: 50%;
-  width: 25px;
-  height: 25px;
+  width: 22px;
+  height: 22px;
   margin-right: 15px;
 }
