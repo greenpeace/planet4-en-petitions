@@ -10,16 +10,15 @@ $(document).ready(function() {
   $('<div class="formsection-heading formsection-heading-payment"><span class="badge badge-light">3</span>Your Gift Payment Method</div>').insertBefore('.donations-formsection-payment');
 
   // Add next buttons on sections
-  $('.donations-formsection-amount').append('<button id="formsection-amount-next" class="btn btn-primary btn-block" type="button">Next</button>');
-  $('.donations-formsection-info').append('<button id="formsection-info-next" class="btn btn-primary btn-block" type="button">Next</button>');
-  $('.donations-formsection-payment').append('<button id="formsection-payment-next" class="btn btn-primary btn-block" type="button">Next</button>');
+  $('.donations-formsection-amount').append('<button class="btn btn-primary btn-block formsection-next" type="button">Next</button>');
+  $('.donations-formsection-info').append('<button class="btn btn-primary btn-block formsection-next" type="button">Next</button>');
+  $('.donations-formsection-payment').append('<button class="btn btn-primary btn-block formsection-next" type="button">Next</button>');
 
   // Show the first section
   $('.donations-formsection-amount').show();
-  $('.donations-heading-amount').show();
 
   // Next buttons visibility trigger
-  $('#formsection-next').click(function() {
+  $('.formsection-next').click(function() {
     $(this).parent().hide();
     $(this).parent().next().next().show();
   });

@@ -12,7 +12,6 @@ div[class*="donations-formsection-"] {
   font-size: 1.2rem;
   background: rgba(07, 67, 101, 1);
   color: white;
-  display: none;
 }
 
 .formsection-heading:not(:first-child) {
