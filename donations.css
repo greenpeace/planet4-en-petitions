@@ -26,3 +26,16 @@ div[class*="donations-formsection-"] {
   height: 22px;
   margin-right: 15px;
 }
+
+.secure-text,
+.tax-text {
+  margin: 20px 0 42px 20px;
+}
+
+.secure-text::before {
+  content: "\f023";
+  font-family: FontAwesome;
+  position: absolute;
+  left: 0;
+  font-size: 2rem;
+}
