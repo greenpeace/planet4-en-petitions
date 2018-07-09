@@ -29,7 +29,7 @@ div[class*="donations-formsection-"] {
 
 .secure-text,
 .tax-text {
-  margin: 20px 0 42px 20px;
+  margin: 20px 0 20px 42px;
 }
 
 .secure-text::before {
