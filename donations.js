@@ -19,7 +19,13 @@ $(document).ready(function() {
 
   // Next buttons visibility trigger
   $('.formsection-next').click(function() {
-    $(this).parent().hide();
-    $(this).parent().next().next().show();
+    $(this).parent().slideUp();
+    $(this).parent().next().next().slideDown();
+  });
+
+  // Expand section on heading click
+  $('.formsection-heading').click(function() {
+    $('div[class*="donations-formsection-"]').slideUp();
+    $(this).next('div').slideDown();
   });
 });
