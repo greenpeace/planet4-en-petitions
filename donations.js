@@ -33,4 +33,10 @@ $(document).ready(function() {
     $('div[class*="donations-formsection-"]').slideUp();
     $(this).next('div').slideDown();
   });
+
+  // Expand section on error
+  $('body').on('DOMNodeInserted', '.en__field__error', function () {
+    $(this).parent().parent().slideDown();
+    $(this).addClass('text-warning');
+  });
 });
