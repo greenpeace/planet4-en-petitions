@@ -19,7 +19,6 @@ div[class*="donations-formsection-"] {
   margin-top: 20px;
 }
 
-
 .badge-light {
   border-radius: 50%;
   width: 22px;
@@ -38,4 +37,17 @@ div[class*="donations-formsection-"] {
   position: absolute;
   left: 0;
   font-size: 2rem;
+}
+
+@media (min-width: 992px) {
+  .formsection-heading {
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  .badge-light {
+    width: 17px;
+    height: 17px;
+    margin-right: 10px;
+  }
 }

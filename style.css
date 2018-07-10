@@ -7513,6 +7513,10 @@ body.home {
   width: 100%;
 }
 
+.en__component--column {
+  min-width: auto;
+}
+
 div[class*="component--column--1"] {
   width: 100%;
   position: relative;
