@@ -5817,6 +5817,10 @@ textarea {
   }
 }
 
+div[class*=__field--checkbox] {
+  color: rgba(07, 67, 101, 1);
+}
+
 div[class*=__field__element--checkbox],
 div[class$="__contactDetails"] {
   margin: 20px 0;
