@@ -1086,7 +1086,7 @@ h2 {
   display: flex;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin: auto;
 }
 
@@ -1169,7 +1169,7 @@ h2 {
 }
 
 .copyright-text {
-  color: #999;
+  color: #e5e5e5;
   font-size: 0.75rem;
   line-height: 1.3;
   margin-left: auto;
@@ -1200,7 +1200,7 @@ h2 {
 }
 
 .copyright-text a {
-  color: #86eee7;
+  color: white;
 }
 
 .gp-year {
