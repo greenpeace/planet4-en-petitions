@@ -635,7 +635,7 @@ h2 {
     flex-direction: column;
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
-    justify-content: space-around;
+    justify-content: space-between;
     position: absolute;
     top: 0;
     left: 0;
@@ -766,7 +766,7 @@ h2 {
     flex-grow: 1;
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
-    justify-content: space-between;
+    justify-content: space-around;
   }
   .navbar-dropdown .close-navbar-dropdown,
   .navbar-dropdown .nav-item-dropdown {
