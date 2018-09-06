@@ -1062,13 +1062,12 @@ h2 {
   font-size: 1.125rem;
   line-height: 3;
   text-transform: uppercase;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
 
 @media (min-width: 768px) {
   .footer-links {
     font-size: 1rem;
-    margin-bottom: 0;
   }
 }
 
