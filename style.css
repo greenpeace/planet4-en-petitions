@@ -5657,6 +5657,37 @@ div[class*="component-formblock"] {
   }
 }
 
+form ul,
+form ol {
+  font-family: "Lora";
+  font-size: 1rem;
+  line-height: 22px;
+}
+
+@media (min-width: 768px) {
+  form ul,
+  form ol {
+    font-size: 1.0625rem;
+    line-height: 26px;
+  }
+}
+
+@media (min-width: 992px) {
+  form ul,
+  form ol {
+    font-size: 1.25rem;
+    line-height: 32px;
+  }
+}
+
+@media (min-width: 1480px) {
+  form ul,
+  form ol {
+    font-size: 1.25rem;
+    line-height: 34px;
+  }
+}
+
 .form-group {
   margin-bottom: 12px;
 }
