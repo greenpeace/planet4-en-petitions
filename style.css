@@ -5740,11 +5740,12 @@ textarea {
     padding: 16px !important;
 }
 
-.en__field__input--select {
+.en__field__element--select .en__field__input--select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   padding: 6px 16px !important;
+  min-width: auto;
 }
 
 .en__field__input--text {
