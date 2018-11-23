@@ -5744,7 +5744,7 @@ textarea {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  padding: 6px 16px !important;
+  padding: 6px 40px 6px 16px !important;
   min-width: auto;
 }
 
