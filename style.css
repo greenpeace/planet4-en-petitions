@@ -5746,6 +5746,8 @@ textarea {
   appearance: none;
   padding: 6px 40px 6px 16px !important;
   min-width: auto;
+  background: #fff url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAUCAYAAADlep81AAAIN3pUW…c+M8E/KmOfgfU/nUoU18gaqwc6yN+oJ6AEfACbUVxzkMgvVkVwoGW6rwkAAAAASUVORK5CYII=) no-repeat right 8px center;
+  background-size: 20px;
 }
 
 .en__field__input--text {
@@ -5760,16 +5762,6 @@ textarea {
 .en__field__input--password,
 .en__field__input--calendar {
   width: 100% !important;
-}
-
-.en__field__element--select:after {
-  font-family: FontAwesome;
-  content: "\f0d7";
-  color: #014c8c;
-  float: right;
-  margin-top: -50px;
-  font-size: 2.125rem;
-  margin-right: 10px;
 }
 
 @media (min-width: 992px) {
