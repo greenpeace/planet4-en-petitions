@@ -7521,7 +7521,7 @@ div[class*="component--column--1"] {
 div[class*="component--column--2"] {
   width: 100%;
   position: relative;
-  padding: 16px 0;
+  padding: 16px;
   order: 1;
   margin-bottom: 30px;
 }
@@ -7535,7 +7535,6 @@ div[class*="component--column--2"] {
     max-width: 50%;
     order: 2;
     margin-bottom: 0;
-    padding: 16px;
   }
 }
 
