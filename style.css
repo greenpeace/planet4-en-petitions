@@ -41,14 +41,14 @@ h2 {
 }
 
 h1 {
-  font-size: 2rem !important;
-  line-height: 1.225 !important;
-  margin-bottom: 1.875rem !important;
+  font-size: 2rem;
+  line-height: 1.225;
+  margin-bottom: 1.875rem;
 }
 
 @media (min-width: 992px) {
   h1 {
-    font-size: 3.5rem !important;
+    font-size: 3.5rem;
     margin-bottom: 2.2rem;
   }
 }
@@ -108,7 +108,8 @@ h2 {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-arrow-marker .path1:before {
+.icon-ar
+-marker .path1:before {
   content: "\e905";
   color: black;
   opacity: 0.25;
@@ -5603,9 +5604,8 @@ blockquote.twitter-tweet a:focus {
 
 .page-sign-petition-page.page-header .custom-title {
   max-width: 90%;
-  margin-top: 49px;
   font-size: 1.75rem;
-  margin-bottom: 28px;
+  margin: 20px 0 10px 0;
 }
 
 @media (min-width: 575px) {
@@ -7470,6 +7470,10 @@ body.home {
   width: 100%;
 }
 
+.en__component--row {
+  display: flex;
+}
+
 .en__component--row .en__component--column {
   min-width: auto;
 }
@@ -7484,6 +7488,7 @@ body.home {
 div[class*="component--column--1"] {
   width: 100%;
   position: relative;
+  order: 2;
 }
 
 @media (min-width: 768px) {
@@ -7494,11 +7499,12 @@ div[class*="component--column--1"] {
 
 @media (min-width: 768px) {
   div[class*="component--column--1"] {
-  -webkit-box-flex: 0;
-  -webkit-flex: 0 0 50%;
-  -ms-flex: 0 0 50%;
-  flex: 0 0 50%;
-  max-width: 50%;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 50%;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+    order: 1;
   }
 }
 
@@ -7515,7 +7521,9 @@ div[class*="component--column--1"] {
 div[class*="component--column--2"] {
   width: 100%;
   position: relative;
-  padding: 16px;
+  padding: 16px 0;
+  order: 1;
+  margin-bottom: 30px;
 }
 
 @media (min-width: 768px) {
@@ -7525,6 +7533,9 @@ div[class*="component--column--2"] {
     -ms-flex: 0 0 50%;
     flex: 0 0 50%;
     max-width: 50%;
+    order: 2;
+    margin-bottom: 0;
+    padding: 16px;
   }
 }
 
