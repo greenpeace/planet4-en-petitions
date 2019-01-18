@@ -5612,23 +5612,19 @@ blockquote.twitter-tweet a:focus {
   .page-sign-petition-page.page-header .custom-title {
     font-size: 2.5rem;
     max-width: 100%;
-    margin-top: 80px;
+    margin-top: 40px;
   }
 }
 
 @media (min-width: 768px) {
   .page-sign-petition-page.page-header .custom-title {
-    font-size: 2.5rem;
     max-width: 75%;
-    margin-top: 80px;
   }
 }
 
 @media (min-width: 992px) {
   .page-sign-petition-page.page-header .custom-title {
     font-size: 3rem;
-    max-width: 75%;
-    margin-top: 80px;
   }
 }
 
