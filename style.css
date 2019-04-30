@@ -7637,11 +7637,10 @@ div[class*="__contactDetails"] {
   z-index: 1020;
 }
 
-.sticky {
-  position: --webkit-sticky !important;
-  position: sticky !important;
-  top: 80px;
-  z-index: 1020;
+@media (max-width: 768px) {
+  .sticky {
+    top: 0;
+  }
 }
 
 .ccvv {
