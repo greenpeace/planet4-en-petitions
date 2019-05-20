@@ -15,7 +15,7 @@ $(document).ready(function() {
   $('.donations-formsection-payment').append('<button class="btn btn-primary btn-block formsection-next" type="button">Next</button>');
 
   // Add informative text
-  $('.en__field--checkbox').prepend('<div class="tax-text">Please note that donations to Greepeace International are not tax-deductable.</div>');
+  $('.en__field--checkbox').prepend('<div class="tax-text">Please note that donations to Greenpeace International are not tax-deductable.</div>');
   $('.en__field--checkbox').prepend('<div class="secure-text">This is a secure webpage. We do not store your credit card information, and your personal data is subject to Greenpeace\'s privacy policy.</div>');
 
 
