@@ -19,6 +19,13 @@ div[class*="donations-formsection-"] {
   margin-top: 20px;
 }
 
+.en__field--validationFailed input,
+.en__field--validationFailed input:focus,
+.en__field--validationFailed select:focus,
+.en__field--validationFailed select {
+  border: 1px solid #ff3333;
+}
+
 .badge-light {
   border-radius: 50%;
   width: 22px;

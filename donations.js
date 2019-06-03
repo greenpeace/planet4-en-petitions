@@ -18,14 +18,29 @@ $(document).ready(function() {
   $('.en__field--checkbox').prepend('<div class="tax-text">Please note that donations to Greenpeace International are not tax-deductable.</div>');
   $('.en__field--checkbox').prepend('<div class="secure-text">This is a secure webpage. We do not store your credit card information, and your personal data is subject to Greenpeace\'s privacy policy.</div>');
 
-
   // Show the first section
   $('.donations-formsection-amount').show();
 
+  function sectionIsComplete($formSection) {
+    var isComplete = true;
+    $formSection.find('.en__mandatory input, .en__mandatory select').each(function() {
+      if ($(this).val() == '') {
+        isComplete = false;
+      }
+    });
+    return isComplete;
+  }
+
   // Next buttons visibility trigger
   $('.formsection-next').click(function() {
-    $(this).parent().slideUp();
-    $(this).parent().next().next().slideDown();
+    var $formSection = $(this).parent();
+
+    if (!sectionIsComplete($formSection)) {
+      $('.en__submit button').click();
+    } else {
+      $formSection.slideUp();
+      $formSection.next().next().slideDown();
+    }
   });
 
   // Expand section on heading click
@@ -36,7 +51,14 @@ $(document).ready(function() {
 
   // Expand section on error
   $('body').on('DOMNodeInserted', '.en__field__error', function () {
-    $(this).parent().parent().slideDown();
-    $(this).addClass('text-warning');
+    window.setTimeout(function() {
+      var $firstError = $('.en__field__error').first();
+      if (!$firstError.is(':visible')) {
+        $('div[class*="donations-formsection-"]').slideUp();
+        $firstError.parent().parent().slideDown();
+      }
+      $('.en__field--validationFailed input').first().focus();
+      window.scrollTo(0, $('.en__field--validationFailed').first().offset().top - 100);
+    }, 100);
   });
 });
