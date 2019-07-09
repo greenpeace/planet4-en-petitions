@@ -5853,6 +5853,7 @@ input[type="radio"] + label {
 
 input[type="radio"] + label:hover {
   cursor: pointer;
+  background-color: #01223d;
 }
 
 input[type="radio"]:checked + label {
