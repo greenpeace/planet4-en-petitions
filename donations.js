@@ -35,9 +35,13 @@ $(document).ready(function() {
   $('.formsection-next').click(function() {
     var $formSection = $(this).parent();
 
-    if (!sectionIsComplete($formSection)) {
+    //Don't validate when clicking next on the 'Amount' section unless an 'Other' amount was specified
+    var isValidationRequired = !$formSection.is($('.donations-formsection-amount')) || $('input[name="transaction.donationAmt"]')[3].checked;
+
+    if (isValidationRequired && !sectionIsComplete($formSection)) {
       $('.en__submit button').click();
     } else {
+      $('.en__field--validationFailed').removeClass('en__field--validationFailed');
       $formSection.slideUp();
       $formSection.next().next().slideDown();
     }
