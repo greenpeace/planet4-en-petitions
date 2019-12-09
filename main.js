@@ -4,7 +4,9 @@ $(document).ready(function() {
   const new_bg = $('.page-background');
   if (new_bg.length) {
     const img = $(new_bg).attr('src');
-    $('.page-header-background > img').attr('src', img);
+    if (img) {
+      $('.page-header-background > img').attr('src', img);
+    }
     $(new_bg).hide();
   }
 
@@ -130,7 +132,7 @@ $(document).ready(function() {
       }
     });
 
-    $('.menu').click(function() {
+    $('.menu').click(function(event) {
       event.stopPropagation();
       $(this).toggleClass('active');
       $slider.animate({
@@ -142,7 +144,7 @@ $(document).ready(function() {
     var $searchBox = $('#search .search-box');
     var $searchTrigger = $('#search-trigger');
 
-    $searchTrigger.on('click', function (e) {
+    $searchTrigger.on('click', function (event) {
       event.stopPropagation();
       $searchBox.slideToggle().toggleClass('active');
     });
@@ -194,46 +196,46 @@ $(document).ready(function() {
     return false;
   }
 
-  if (p4_site_act_page != '') {
+  if (typeof p4_site_act_page !== 'undefined' && p4_site_act_page != '') {
     $('a[id="act_page"]').attr('href', p4_site_act_page);
   }
-  if (p4_site_explore_page != '') {
+  if (typeof p4_site_explore_page !== 'undefined' && p4_site_explore_page != '') {
     $('a[id="explore_page"]').attr('href', p4_site_explore_page);
   }
-  if (p4_site_donate_btn != '') {
+  if (typeof p4_site_donate_btn !== 'undefined' && p4_site_donate_btn != '') {
     $('a[id="donate_page"]').attr('href', p4_site_donate_btn);
   }
-  if (p4_fb_page != '') {
+  if (typeof p4_fb_page !== 'undefined' && p4_fb_page != '') {
     $('a[id="fb_page"]').attr('href', p4_fb_page);
   }
-  if (p4_twitter_page != '') {
+  if (typeof p4_twitter_page !== 'undefined' && p4_twitter_page != '') {
     $('a[id="tw_page"]').attr('href', p4_twitter_page);
   }
-  if (p4_yt_page != '') {
+  if (typeof p4_yt_page !== 'undefined' && p4_yt_page != '') {
     $('a[id="yt_page"]').attr('href', p4_yt_page);
   }
-  if (p4_instagram_page != '') {
+  if (typeof p4_instagram_page !== 'undefined' && p4_instagram_page != '') {
     $('a[id="insta_page"]').attr('href', p4_instagram_page);
   }
-  if (p4_site_news_page != '') {
+  if (typeof p4_site_news_page !== 'undefined' && p4_site_news_page != '') {
     $('a[id="news_page"]').attr('href', p4_site_news_page);
   }
-  if (p4_site_about_page != '') {
+  if (typeof p4_site_about_page !== 'undefined' && p4_site_about_page != '') {
     $('a[id="about_page"]').attr('href', p4_site_about_page);
   }
-  if (p4_site_jobs_page != '') {
+  if (typeof p4_site_jobs_page !== 'undefined' && p4_site_jobs_page != '') {
     $('a[id="jobs_page"]').attr('href', p4_site_jobs_page);
   }
-  if (p4_site_press_page != '') {
+  if (typeof p4_site_press_page !== 'undefined' && p4_site_press_page != '') {
     $('a[id="press_page"]').attr('href', p4_site_press_page);
   }
-  if (p4_site_privacy_page != '') {
+  if (typeof p4_site_privacy_page !== 'undefined' && p4_site_privacy_page != '') {
     $('a[id="privacy_page"]').attr('href', p4_site_privacy_page);
   }
-  if (p4_community_policy_page != '') {
+  if (typeof p4_community_policy_page !== 'undefined' && p4_community_policy_page != '') {
     $('a[id="community_policy_page"]').attr('href', p4_community_policy_page);
   }
-  if (p4_search_archive_page != '') {
+  if (typeof p4_search_archive_page !== 'undefined' && p4_search_archive_page != '') {
     $('a[id="search_archive_page"]').attr('href', p4_search_archive_page);
   }
 });
