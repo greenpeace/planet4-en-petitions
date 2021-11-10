@@ -4901,9 +4901,15 @@ blockquote.twitter-tweet a:focus {
   }
 }
 
-@media (min-width: 1480px) {
+@media (min-width: 1200px) {
   .page-template {
     width: 1140px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .page-template {
+    width: 1320px;
   }
 }
 
